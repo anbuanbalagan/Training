@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+
+
+    <style>
+
+        <style >
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 60%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        row label {
+            margin-left: 50px;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            font-size: 25px;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            background-color: white;
+        }
+        h2 {
+            margin: 0 auto;
+            padding: 10px;
+            color: black;
+            font-size: 30px;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .button {
+            color: black;
+            padding: 10px 29px;
+            text-align: center;
+            margin-left: 30%;
+            background-color: #27CA30;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 30px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body style="background-color:lightblue;">
+    <h1 style="color:black;font-size:60px;text-align:center;">Registration Form</h1>
+    
+
+    <form>
+        <div class="sdetails">
+            <h2 >Fill the Details of Players :</h2>
+            <label for="state"> State</label><br />
+            <input type="text" id="state" name="state" placeholder="Your State.."><br />
+            <label for="fname"> First Name</label><br />
+            <input type="text" id="fname" name="firstname" placeholder="Your first name.."><br />
+            <label for="lname"> Last Name</label><br />
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br />
+            <label for="semail">Email</label><br />
+            <input type="text" id="semail" name="semail" placeholder="Your email.."><br />
+            <label for="sdob">Date of Birth</label><br />
+            <input type="text" id="dob" name="dob" placeholder="Your Dob.."><br />
+            <label for="number">Contact Number</label><br />
+            <input type="text" id="cnumber" name="cnumber" placeholder="Your Number.."><br />
+            <label for="weight">Weight</label><br />
+            <input type="text" id="weight" name="weight" placeholder="Weight.."><br />
+            <label for="height">Height</label><br />
+            <input type="text" id="hei" name="height" placeholder="Height.."><br />
+            <label for="addr">Address</label><br />
+            <input type="text" id="addr" name="address" placeholder="Your address.."><br />
+            <label for="city">City</label><br />
+            <input type="text" id="city" name="city" placeholder="Your city.."><br />
+        </div>
+        <label style="margin-right:40px;for=" skills">Player's Skills :</label>
+        <input type="radio" id="raid" name="players_Skills" value="raid">
+        <label style="margin-right:;for=" raid">RAIDER</label>
+        <input type="radio" id="defence" name="players_Skills" value="defence">
+        <label style="margin-right:;for=" defence">DEFENDER</label>
+        <input type="radio" id="both" name="players_Skills" value="both">
+        <label style="margin-right:;for=" both">ALL ROUNDER</label><br /><br />
+       
+    </form>
+
+    <button type="button" class="button" onclick="myFunction()"><b>Submit</b></button>
+    <p id="demo"></p>
+    <script>
+        const myFunction = () => {
+            window.location.href = "submit.html";
+        }
+        console.log('hello')
+    </script>
+
+
+
+
+</body>
+
+
+    
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: #E3F2FD;
+            height:100%;
+        }
+        h1{
+            font-size:50px;
+        }
+
+        form {
+            width:55%;
+            height:70%;
+            margin:0 auto;
+            border: 5px solid #f1f1f1;
+        }
+        label{
+            font-size:25px;
+
+        }
+
+        input[type=text], input[type=password] {
+            width: 60%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+        .one {
+            
+            text-align: center;
+           
+        }
+            .one a {
+                font-size: 30px;
+                width: 50%;
+                background-color: #4CAF50;
+                text-decoration: none;
+            }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            margin: 10px 5px;
+        }
+
+
+        .container {
+            padding: 25px;
+            background-color: lightblue;
+        } 
+      
+    </style>
+</head>
+<body>
+    <center><h1>Log-in</h1></center>
+    <form>
+        <div class="container">
+            <label>Username : </label><br />
+            <input type="text" placeholder="Enter Username" name="username" required><br />
+
+            <label>Password : </label><br>
+            <input type="password" placeholder="Enter Password" name="password" required><br />
+            <div class="one">
+              <a href="Registration.html"><b>Login</b></a><br />
+            </div>
+              <input type="checkbox" checked="checked"> Remember me   
+        </div>
+    </form>
+</body>
+</html>

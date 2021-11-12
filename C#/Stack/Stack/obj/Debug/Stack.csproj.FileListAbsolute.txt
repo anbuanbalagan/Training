@@ -1,0 +1,6 @@
+C:\inetpub\wwwroot\Training Sample\C#\Stack\Stack\bin\Debug\Stack.exe.config
+C:\inetpub\wwwroot\Training Sample\C#\Stack\Stack\bin\Debug\Stack.exe
+C:\inetpub\wwwroot\Training Sample\C#\Stack\Stack\bin\Debug\Stack.pdb
+C:\inetpub\wwwroot\Training Sample\C#\Stack\Stack\obj\Debug\Stack.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Training Sample\C#\Stack\Stack\obj\Debug\Stack.exe
+C:\inetpub\wwwroot\Training Sample\C#\Stack\Stack\obj\Debug\Stack.pdb

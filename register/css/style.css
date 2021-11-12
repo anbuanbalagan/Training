@@ -1,0 +1,11 @@
+﻿.input{
+    height:35px;
+    width:250px;
+}
+.btn {
+    height: 30px;
+    width: 200px;
+    font-size:22px;
+    background-color:seashell;
+    margin-left:350px;
+}

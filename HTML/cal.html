@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Report Card</h2>
+
+    <table border="1">
+        <tr><td>Name</td><td><input type="text" id="txtStudentName" readonly></td></tr>
+        <tr><td>Class</td><td><input type="text" id="txtStudentClass" readonly></td></tr>
+        <tr><td>Total Marks</td><td><input type="text" id="txtTotalMarks" readonly></td></tr>
+        <tr><td>Average Marks</td><td><input type="text" id="txtAvgMarks" readonly></td></tr>
+        <tr><td>Result </td><td><input type="text" id="result" readonly></td></tr>
+    </table>
+
+
+
+    <script>
+        const getReport = () => {
+
+            var name = document.getElementById('name').value;
+            var sclass = document.getElementById('sclass').value;
+            var tam = document.getElementById('tam').value;
+            var eng = document.getElementById('eng').value;
+            var mat = document.getElementById('mat').value;
+            var sci = document.getElementById('sci').value;
+            var ssci = document.getElementById('ssci').value;
+
+            var totalmarks = parseInt(tam) + parseInt(eng) + parseInt(mat) + parseInt(sci) + parseInt(ssci);
+            var average = (totalmarks / 5);
+</body >
+</html >
+
+
+
+
+
+
+

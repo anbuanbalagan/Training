@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Survey Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 60%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        row label {
+            margin-left: 50px;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            font-size: 25px;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            background-color: white;
+        }
+
+        body {
+            background-color: #B7F9F6;
+        }
+
+        p {
+            font-size: 25px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .button {
+            color: black;
+            padding: 10px 29px;
+            text-align: center;
+            margin-left: 30%;
+            background-color: #4CAF50;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 30px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Survey Forms</h1>
+  
+    <form>
+        <div class="sdetails">
+            <p> Students are requested to fill the Survey Form given below:</p>
+            <label for="fname">Student First Name</label><br />
+            <input type="text" id="fname" name="firstname" placeholder="Your first name.."><br />
+            <label for="lname">Student Last Name</label><br />
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br />
+            <label for="semail">Email</label><br />
+            <input type="text" id="semail" name="semail" placeholder="Your email.."><br />
+            <label for="sdegree">Degree</label><br />
+            <input type="text" id="sdegree" name="studentdegree" placeholder="Your degree.."><br />
+            <label for="sbranch">Branch</label><br />
+            <input type="text" id="sbranch" name="studentbranch" placeholder="Your branch.."><br />
+            <label for="year">Current Year</label><br />
+            <input type="text" id="year" name="syear" placeholder="Current year.."><br />
+            <label for="sem">Semester</label><br />
+            <input type="text" id="sem" name="ssem" placeholder="Current sem.."><br />
+        </div>         
+            <div class="sform">
+                <p style="margin-left:20px;">1. How would you Rate the Course? </p>
+                <input type="radio" id="crate" name="course rate" value="excellent">
+                <label for="excellent">Excellent</label>
+                <input type="radio" id="vg" name="course rate" value="Very Good">
+                <label for="vg">Very Good</label>
+                <input type="radio" id="good" name="course rate" value="Good">
+                <label for="good">Good</label>
+                <input type="radio" id="avg" name=" rate" value="Average">
+                <label for="avg">Average</label>
+                <input type="radio" id="poor" name="course rate" value="Poor">
+                <label for="poor">Poor</label>
+            </div>
+            <div class="sform">
+                <p style="margin-left:20px;">2. How useful were the course materials(readings,textbooks)? </p>
+                <input type="radio" id="crate" name="course rate" value="excellent">
+                <label for="excellent">Excellent</label>
+                <input type="radio" id="vg" name="course rate" value="Very Good">
+                <label for="vg">Very Good</label>
+                <input type="radio" id="good" name="course rate" value="Good">
+                <label for="good">Good</label>
+                <input type="radio" id="avg" name=" rate" value="Average">
+                <label for="avg">Average</label>
+                <input type="radio" id="poor" name="course rate" value="Poor">
+                <label for="poor">Poor</label>
+            </div>
+            <div class="sform">
+                <p style="margin-left:20px;">3. How clearly did your instructor explain the course material? </p>
+                <input type="radio" id="crate" name="course rate" value="excellent">
+                <label for="excellent">Excellent</label>
+                <input type="radio" id="vg" name="course rate" value="Very Good">
+                <label for="vg">Very Good</label>
+                <input type="radio" id="good" name="course rate" value="Good">
+                <label for="good">Good</label>
+                <input type="radio" id="avg" name=" rate" value="Average">
+                <label for="avg">Average</label>
+                <input type="radio" id="poor" name="course rate" value="Poor">
+                <label for="poor">Poor</label>
+            </div>
+            <div class="sform">
+                <p style="margin-left:20px;">4. How would you Rate the Course? </p>
+                <input type="radio" id="crate" name="course rate" value="excellent">
+                <label for="excellent">Excellent</label>
+                <input type="radio" id="vg" name=" rate" value="Very Good">
+                <label for="vg">Very Good</label>
+                <input type="radio" id="good" name=" rate" value="Good">
+                <label for="good">Good</label>
+                <input type="radio" id="avg" name=" rate" value="Average">
+                <label for="avg">Average</label>
+                <input type="radio" id="poor" name=" rate" value="Poor">
+                <label for="poor">Poor</label>
+            </div>
+            <div class="sform">
+                <p style="margin-left:20px;">5. How comfortable did you feel voicing your opinions in class? </p>
+                <input type="radio" id="crate" name="course rate" value="excellent">
+                <label for="excellent">Excellent</label>
+                <input type="radio" id="vg" name="course rate" value="Very Good">
+                <label for="vg">Very Good</label>
+                <input type="radio" id="good" name="course rate" value="Good">
+                <label for="good">Good</label>
+                <input type="radio" id="avg" name=" rate" value="Average">
+                <label for="avg">Average</label>
+                <input type="radio" id="poor" name="course rate" value="Poor">
+                <label for="poor">Poor</label>
+            </div>
+            <div class="sform">
+                <p style="margin-left:20px;">6. How helful were thr homework assignment to your understanding of the materials? </p>
+                <input type="radio" id="crate" name="course rate" value="excellent">
+                <label for="excellent">Excellent</label>
+                <input type="radio" id="vg" name="course rate" value="Very Good">
+                <label for="vg">Very Good</label>
+                <input type="radio" id="good" name="course rate" value="Good">
+                <label for="good">Good</label>
+                <input type="radio" id="avg" name=" rate" value="Average">
+                <label for="avg">Average</label>
+                <input type="radio" id="poor" name="course rate" value="Poor">
+                <label for="poor">Poor</label>
+            </div>
+            <div class="sform">
+                <p style="margin-left:20px;">7.What improvements would you make to the course?  </p>
+                <div class="col-75">
+                    <textarea id="content" name="subject" placeholder="Write something.." style="height:150px;width:550px"></textarea>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="sform">
+                <p style="margin-left:20px;">Additional comments  </p>
+                <div class="col-75">
+                    <textarea id="content" name="cmts" placeholder="Write something.." style="height:150px;width:550px"></textarea>
+                </div>
+            </div>
+                                                                                                                                                                                                                                                                                                 <br><br /><br /><br><br><br><br><br><br><br><br><br>
+</form>
+        
+        <button type="button" class="button" onclick="myFunction()"><b>Submit</b></button>
+        <p id="demo"></p>
+        <script>
+        const myFunction = () => {
+            window.location.href = "submit.html";
+            }
+           
+        </script>
+  
+</body>
+</html>

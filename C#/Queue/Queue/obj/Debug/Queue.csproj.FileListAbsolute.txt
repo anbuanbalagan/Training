@@ -1,0 +1,6 @@
+C:\inetpub\wwwroot\Training Sample\C#\Queue\Queue\bin\Debug\Queue.exe.config
+C:\inetpub\wwwroot\Training Sample\C#\Queue\Queue\bin\Debug\Queue.exe
+C:\inetpub\wwwroot\Training Sample\C#\Queue\Queue\bin\Debug\Queue.pdb
+C:\inetpub\wwwroot\Training Sample\C#\Queue\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Training Sample\C#\Queue\Queue\obj\Debug\Queue.exe
+C:\inetpub\wwwroot\Training Sample\C#\Queue\Queue\obj\Debug\Queue.pdb

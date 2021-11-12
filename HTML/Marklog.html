@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 60%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+      
+
+        label {
+            padding: 12px 12px 12px 0;
+            font-size: 25px;
+            display: inline-block;
+            padding-bottom:20px;
+        }
+
+       
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            background-color: white;
+        }
+
+        h2 {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        body {
+            background-color: #C4F2F0;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+        button{
+            border-radius: 25%;
+            background-color: cornflowerblue;
+            font-size: 25px;
+            padding-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>ABC Higher Secondary School</h1>
+    <h2>Student Marksheet</h2>
+    <div class="container"></div>
+    <div class="sdetails">
+        <form>
+            <label for="fname">Student Name</label><br />
+            <input type="text" id="name" name="firstname" placeholder="Student name.."><br><br />
+
+            <label for="xname">Exam Name</label><br />
+            <input type="text" id="xname" name="examname" placeholder="Exam name.."><br><br />
+            <label for="fname">Student Class</label><br />
+            <div class="one">
+                <button><a href="Marksheet1.html" style="text-decoration:none;">class 10</a></button>
+                <button><a href="Marksheet2.html" style="text-decoration:none;">class 11/12</a></button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

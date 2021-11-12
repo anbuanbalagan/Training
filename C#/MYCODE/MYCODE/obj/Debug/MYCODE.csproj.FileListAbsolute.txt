@@ -1,0 +1,7 @@
+C:\inetpub\wwwroot\Training Sample\C#\MYCODE\MYCODE\bin\Debug\MYCODE.exe.config
+C:\inetpub\wwwroot\Training Sample\C#\MYCODE\MYCODE\bin\Debug\MYCODE.exe
+C:\inetpub\wwwroot\Training Sample\C#\MYCODE\MYCODE\bin\Debug\MYCODE.pdb
+C:\inetpub\wwwroot\Training Sample\C#\MYCODE\MYCODE\obj\Debug\MYCODE.csproj.AssemblyReference.cache
+C:\inetpub\wwwroot\Training Sample\C#\MYCODE\MYCODE\obj\Debug\MYCODE.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Training Sample\C#\MYCODE\MYCODE\obj\Debug\MYCODE.exe
+C:\inetpub\wwwroot\Training Sample\C#\MYCODE\MYCODE\obj\Debug\MYCODE.pdb

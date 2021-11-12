@@ -1,0 +1,7 @@
+C:\inetpub\wwwroot\Training Sample\C#\List\List\bin\Debug\List.exe.config
+C:\inetpub\wwwroot\Training Sample\C#\List\List\bin\Debug\List.exe
+C:\inetpub\wwwroot\Training Sample\C#\List\List\bin\Debug\List.pdb
+C:\inetpub\wwwroot\Training Sample\C#\List\List\obj\Debug\List.csproj.AssemblyReference.cache
+C:\inetpub\wwwroot\Training Sample\C#\List\List\obj\Debug\List.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Training Sample\C#\List\List\obj\Debug\List.exe
+C:\inetpub\wwwroot\Training Sample\C#\List\List\obj\Debug\List.pdb
