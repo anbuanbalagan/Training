@@ -8,6 +8,7 @@ namespace OOPS_Concepts
 
 		public Account()
 		{
+
 		}
 
 		public Account(double initial_deposit)
@@ -25,28 +26,41 @@ namespace OOPS_Concepts
 			return balance;
 		}
 
-		public double withdrawFunds(double amount)
+		public void withdrawFunds(double withdrawamount)
 		{
-			if(amount > balance)
-			{
-				//amount = balance;
+			double withdraw = withdrawamount;
+
+			if(withdraw > balance)
+			{			
 				Console.WriteLine("Insufficient Fund");			
 			}
-			balance = balance - amount;
-			return amount;
+			else
+			{
+				balance = balance - withdraw;
+				while(balance <= 10000)
+				{
+					Console.WriteLine("Minimum Balance should be in your account. Try Again...");
+					Environment.Exit(0);
+				}
+				Console.WriteLine("Balance Amount in your Account is: $" + balance);
+			}			
 		}
+
 		public static void Main()
 		{
 			Account acc = new Account(10000);
+
+			Console.WriteLine("Balance in Your Account : $ " +acc.getBalance());
 			Console.WriteLine("Enter the deposit amount");
-			double damt = Convert.ToDouble(Console.ReadLine());
-			acc.depositFunds(damt);
+			double depositAmount = Convert.ToDouble(Console.ReadLine());
+			acc.depositFunds(depositAmount);
+
 			Console.WriteLine("Balance Amount is : $" + acc.getBalance());
 
 			Console.WriteLine("Enter the Withdraw amount");
-			double wamt = Convert.ToDouble(Console.ReadLine());
-			acc.withdrawFunds(wamt);
-			Console.WriteLine("Balance Amount is : $" + acc.getBalance());
+			double withdrawAmount = Convert.ToDouble(Console.ReadLine());
+			acc.withdrawFunds(withdrawAmount);
+			Console.WriteLine("\n");			
 		}
 	}
 }
