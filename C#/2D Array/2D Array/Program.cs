@@ -14,8 +14,7 @@ namespace _2D_Array
             int[,] b = new int[3, 3];
             int[,] c = new int[3, 3];
             int i, j;
-
-            /* Enter the Array1 */
+                        
             Console.WriteLine("Enter the First Array Elements");
             for (i = 0; i < 3; i++)
             {
@@ -25,7 +24,7 @@ namespace _2D_Array
                     a[i, j] = int.Parse(Console.ReadLine());
                 }
             }
-            /* Enter the Array2 */
+            
             Console.WriteLine("Enter the Second Array Elements");
             for (i = 0; i < 3; i++)
             {
@@ -35,7 +34,7 @@ namespace _2D_Array
                     b[i, j] = int.Parse(Console.ReadLine());
                 }
             }
-            /* Array Addition */
+            
             Console.WriteLine("Array Addition ");
             for (i = 0; i < 3; i++)
             {
