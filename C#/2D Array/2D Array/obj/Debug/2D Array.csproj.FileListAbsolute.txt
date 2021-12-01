@@ -5,3 +5,10 @@ C:\inetpub\wwwroot\Training Sample\C#\2D Array\2D Array\obj\Debug\2D Array.cspro
 C:\inetpub\wwwroot\Training Sample\C#\2D Array\2D Array\obj\Debug\2D Array.csproj.CoreCompileInputs.cache
 C:\inetpub\wwwroot\Training Sample\C#\2D Array\2D Array\obj\Debug\2D Array.exe
 C:\inetpub\wwwroot\Training Sample\C#\2D Array\2D Array\obj\Debug\2D Array.pdb
+C:\inetpub\wwwroot\Github\TrainingSamples\C#\2D Array\2D Array\bin\Debug\2D Array.exe.config
+C:\inetpub\wwwroot\Github\TrainingSamples\C#\2D Array\2D Array\bin\Debug\2D Array.exe
+C:\inetpub\wwwroot\Github\TrainingSamples\C#\2D Array\2D Array\bin\Debug\2D Array.pdb
+C:\inetpub\wwwroot\Github\TrainingSamples\C#\2D Array\2D Array\obj\Debug\2D Array.csproj.AssemblyReference.cache
+C:\inetpub\wwwroot\Github\TrainingSamples\C#\2D Array\2D Array\obj\Debug\2D Array.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Github\TrainingSamples\C#\2D Array\2D Array\obj\Debug\2D Array.exe
+C:\inetpub\wwwroot\Github\TrainingSamples\C#\2D Array\2D Array\obj\Debug\2D Array.pdb
