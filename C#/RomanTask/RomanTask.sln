@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RomanTask", "RomanTask.csproj", "{52A848A6-4BA7-40CB-B9FE-60F67C6F22BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanTaskTest", "..\RomanTaskTest\RomanTaskTest.csproj", "{BF348670-361C-4295-AC3A-FF9811287E3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52A848A6-4BA7-40CB-B9FE-60F67C6F22BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A848A6-4BA7-40CB-B9FE-60F67C6F22BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A848A6-4BA7-40CB-B9FE-60F67C6F22BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A848A6-4BA7-40CB-B9FE-60F67C6F22BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF348670-361C-4295-AC3A-FF9811287E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF348670-361C-4295-AC3A-FF9811287E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF348670-361C-4295-AC3A-FF9811287E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF348670-361C-4295-AC3A-FF9811287E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2005EE4-A8D7-4344-95CD-AC5AE6C1D295}
+	EndGlobalSection
+EndGlobal
