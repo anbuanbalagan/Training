@@ -6,13 +6,13 @@ namespace RomanTask
 	{
 		static void Main(string[] args)
 		{
-			int nValue;
+			int nNumber;
 			Console.WriteLine("Enter the value ");
-			if(int.TryParse(Console.ReadLine(), out nValue))
+			if(int.TryParse(Console.ReadLine(), out nNumber))
 			{
-				if(nValue > 0 && nValue <= 4999)
+				if(nNumber > 0 && nNumber <= 4999)
 				{
-					Decimal2Roman(nValue);
+					Decimal2Roman(nNumber);
 				}
 				else
 				{
