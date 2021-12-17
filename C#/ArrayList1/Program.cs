@@ -50,10 +50,7 @@ public class Program
                     DeleteContact();
                     break;
                 case 6:
-                    return;
-                default:
-                    Console.WriteLine("Invalid Choice. Try Again...");
-                    break;
+                    return;                
             }            
         }
 		else
@@ -61,11 +58,10 @@ public class Program
             Console.WriteLine("Invalid Choice");
 		}
         DisplayMenu();
-    }
+     }
 
      static void InsertContact()
-     {
-       
+     {       
         ContactBook Contactbook = new ContactBook();
 
         Console.Write("Enter FirstName : ");
@@ -97,7 +93,6 @@ public class Program
                  Console.WriteLine("PhoneNumber : " + Contact.PhoneNumber);
                  Console.WriteLine("Location : " + Contact.Location);
                  Console.WriteLine("\n");
-                 Console.ReadKey();
             }
         }
      }
@@ -117,11 +112,11 @@ public class Program
                 break;
             }
         }
+
         if(bContactExist)
         {           
             Console.WriteLine("Contact Deleted");
             Console.WriteLine("\n");
-            Console.ReadKey();
         }
 		else
 		{
@@ -146,39 +141,44 @@ public class Program
                 break;
             }
         }
+
         if(bContactExist)
         {
-            Console.WriteLine("\n For this PhoneNumber What do you want to edit");          
+                Console.WriteLine("\n For this PhoneNumber What do you want to edit");          
                 Console.WriteLine("1: Edit FirstName");
                 Console.WriteLine("2: Edit PhoneNumber");
                 Console.WriteLine("3: Edit Location");
                 Console.WriteLine("4: Exit");
                 Console.WriteLine("Enter your Choice");
 
-                int nChoice = int.Parse(Console.ReadLine());
-                switch(nChoice)
+                int nChoice;
+                int.TryParse(Console.ReadLine(), out nChoice);
+                if(nChoice > 0)
                 {
-                    case 1:
-                        Console.WriteLine("Enter the new FirstName");
-                        Contactbook.FirstName = Console.ReadLine();
-                        break;
+                    switch(nChoice)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter the new FirstName");
+                            Contactbook.FirstName = Console.ReadLine();
+                            break;
 
-                    case 2:
-                        Console.WriteLine("Enter the new PhoneNumber");
-                        Contactbook.PhoneNumber = Convert.ToInt64(Console.ReadLine());
-                        break;
+                        case 2:
+                            Console.WriteLine("Enter the new PhoneNumber");
+                            Contactbook.PhoneNumber = Convert.ToInt64(Console.ReadLine());
+                            break;
 
-                    case 3:
-                        Console.WriteLine("Enter the new Location");
-                        Contactbook.Location = Console.ReadLine();
-                        break;
+                        case 3:
+                            Console.WriteLine("Enter the new Location");
+                            Contactbook.Location = Console.ReadLine();
+                            break;
 
-                    case 4:
-                        return;
-
-                    default:
-                        Console.WriteLine("Invalid Choice. Try again...");
-                        break;
+                        case 4:
+                            return;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Choice. Try again...");
                 }            
         }
 		else
@@ -202,21 +202,20 @@ public class Program
                    break;
                }
            }
+
            if(Contactbook != null)
            {
-              Console.WriteLine("FirstName : " + Contactbook.FirstName);
-              Console.WriteLine("PhoneNumber : " + Contactbook.PhoneNumber);
-              Console.WriteLine("Location : " + Contactbook.Location);
-              Console.WriteLine("\n");
-              //DisplayContact();
+                Console.WriteLine("FirstName : " + Contactbook.FirstName);
+                Console.WriteLine("PhoneNumber : " + Contactbook.PhoneNumber);
+                Console.WriteLine("Location : " + Contactbook.Location);
+                Console.WriteLine("\n");
            }
 		   else
 		   {
-            Console.WriteLine("No Record Found.");
-            Console.WriteLine("\n");
-		   }
-    
-    }    
+                Console.WriteLine("No Record Found.");
+                Console.WriteLine("\n");
+		   }    
+     }    
 }
 
 
