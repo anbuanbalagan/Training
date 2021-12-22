@@ -53,11 +53,11 @@ namespace ContactBookDB
 		public void AddContact()
 		{
 			string strName, strLocation;
-			int nNumber;
+			int nPhoneNumber;
 			Console.WriteLine("Enter Name");
 			strName = Console.ReadLine();
 			Console.WriteLine("Enter PhoneNumber");
-			nNumber = int.Parse(Console.ReadLine());
+			nPhoneNumber = int.Parse(Console.ReadLine());
 			Console.WriteLine("Enter Location");
 			strLocation = Console.ReadLine();
 
@@ -66,10 +66,10 @@ namespace ContactBookDB
 				connection.Open();
 				SqlCommand command ;
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
-				string sql = "Insert into Contacts(Name, PhoneNumber, Location) Values(@Name, @PhoneNumber, @Location)";
-				command = new SqlCommand(sql, connection);					
+				string sqlQuery = "Insert into Contacts(Name, PhoneNumber, Location) Values(@Name, @PhoneNumber, @Location)";
+				command = new SqlCommand(sqlQuery, connection);					
 				command.Parameters.AddWithValue("@Name", strName);					
-				command.Parameters.AddWithValue("@PhoneNumber", nNumber);
+				command.Parameters.AddWithValue("@PhoneNumber", nPhoneNumber);
 				command.Parameters.AddWithValue("@Location", strLocation);					
 				command.ExecuteNonQuery();
 				DisplayContact();
@@ -87,16 +87,16 @@ namespace ContactBookDB
 				connection.Open();
 				SqlCommand command;
 				SqlDataReader dataReader;
-				string sql = "Select * from Contacts", output = " ";
-				command = new SqlCommand(sql, connection);
+				string sqlQuery = "Select * from Contacts", displayContact = " ";
+				command = new SqlCommand(sqlQuery, connection);
 				dataReader = command.ExecuteReader();
 
 				while(dataReader.Read()) 				
 				{
-					output = output + dataReader.GetValue(0) + "   " + dataReader.GetValue(1) + "   " + dataReader.GetValue(2) + "\n";
+					displayContact +=  dataReader.GetValue(0) + "   " + dataReader.GetValue(1) + "   " + dataReader.GetValue(2) + "\n";
 				}				
 
-				Console.WriteLine(output);
+				Console.WriteLine(displayContact);
 				dataReader.Close();
 				command.Dispose();
 				connection.Close();
@@ -108,7 +108,7 @@ namespace ContactBookDB
 			int nPhoneNumber;
 			Console.WriteLine("Enter the Number to Search ");
 			nPhoneNumber = int.Parse(Console.ReadLine());
-			check(nPhoneNumber);
+			checkRecord(nPhoneNumber);
 
 			using(SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=ContactBook;Integrated Security=SSPI"))
 			{
@@ -116,17 +116,17 @@ namespace ContactBookDB
 				SqlCommand command;
 				SqlDataReader dataReader;
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
-				string output = " ", sql = "Select * from Contacts where PhoneNumber = @PhoneNumber;";
-				command = new SqlCommand(sql, connection);
+				string displayContact = " ", sqlQuery = "Select * from Contacts where PhoneNumber = @PhoneNumber;";
+				command = new SqlCommand(sqlQuery, connection);
 				command.Parameters.AddWithValue("@PhoneNumber", nPhoneNumber);							
 				dataReader = command.ExecuteReader();
 				
 				while(dataReader.Read())
 				{
-					output = output + dataReader.GetValue(0) + "  " + dataReader.GetValue(1) + "  " + dataReader.GetValue(2) + "\n";
+					displayContact = displayContact + dataReader.GetValue(0) + "  " + dataReader.GetValue(1) + "  " + dataReader.GetValue(2) + "\n";
 				}
 
-				Console.WriteLine(output);
+				Console.WriteLine("\n"+ displayContact);
 				dataAdapter.Dispose();
 				dataReader.Close();
 				command.Dispose();
@@ -136,19 +136,19 @@ namespace ContactBookDB
 
 		public void DeleteContact()
 		{
-			int PhoneNumber;
+			int nPhoneNumber;
 			Console.WriteLine("Enter the Number to Delete ");
-			PhoneNumber = int.Parse(Console.ReadLine());
-			check(PhoneNumber);
+			nPhoneNumber = int.Parse(Console.ReadLine());
+			checkRecord(nPhoneNumber);
 
 			using(SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=ContactBook;Integrated Security=SSPI"))
 			{
 				connection.Open();
 				SqlCommand command;
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
-				string sql = "Delete from Contacts where PhoneNumber = @PhoneNumber";
-				command = new SqlCommand(sql, connection);					
-				command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);				
+				string sqlQuery = "Delete from Contacts where PhoneNumber = @PhoneNumber";
+				command = new SqlCommand(sqlQuery, connection);					
+				command.Parameters.AddWithValue("@PhoneNumber", nPhoneNumber);				
 				command.ExecuteNonQuery();
 				Console.WriteLine("Contact Deleted Successfully.");
 				DisplayContact();
@@ -192,10 +192,10 @@ namespace ContactBookDB
 
 		public void EditName()
 		{
-			int PhoneNumber;
+			int nPhoneNumber;
 			Console.WriteLine("Enter the number to Edit ");
-			PhoneNumber = int.Parse(Console.ReadLine());
-			check(PhoneNumber);
+			nPhoneNumber = int.Parse(Console.ReadLine());
+			checkRecord(nPhoneNumber);
 			string strName;
 			Console.WriteLine("Enter the New Name ");
 			strName = Console.ReadLine();
@@ -205,10 +205,10 @@ namespace ContactBookDB
 				connection.Open();
 				SqlCommand command;
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
-				string sql = "Update Contacts Set Name = @Name where PhoneNumber = @Number";
+				string sql = "Update Contacts Set Name = @Name where PhoneNumber = @PhoneNumber";
 				command = new SqlCommand(sql, connection);				
 				command.Parameters.AddWithValue("@Name", strName);
-				command.Parameters.AddWithValue("@Number", PhoneNumber);
+				command.Parameters.AddWithValue("@PhoneNumber", nPhoneNumber);
 				command.ExecuteNonQuery();
 				dataAdapter.Dispose();
 				command.Dispose();
@@ -218,22 +218,22 @@ namespace ContactBookDB
 
 		public void EditNumber()
 		{
-			int PhoneNumber,NewNumber;
+			int nPhoneNumber,nNewNumber;
 			Console.WriteLine("Enter the number to Edit ");
-			PhoneNumber = int.Parse(Console.ReadLine());
-			check(PhoneNumber);
+			nPhoneNumber = int.Parse(Console.ReadLine());
+			checkRecord(nPhoneNumber);
 			Console.WriteLine("Enter the New PhoneNumber ");
-			NewNumber = int.Parse(Console.ReadLine());
+			nNewNumber = int.Parse(Console.ReadLine());
 			
 			using(SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=ContactBook;Integrated Security=SSPI"))
 			{
 				connection.Open();
 				SqlCommand command;
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
-				string sql = "Update Contacts Set PhoneNumber = @PhoneNumber where PhoneNumber = @Number";
-				command = new SqlCommand(sql, connection);				
-				command.Parameters.AddWithValue("@PhoneNumber", NewNumber);
-				command.Parameters.AddWithValue("@Number", PhoneNumber);
+				string sqlQuery = "Update Contacts Set PhoneNumber = @PhoneNumber where PhoneNumber = @Number";
+				command = new SqlCommand(sqlQuery, connection);				
+				command.Parameters.AddWithValue("@PhoneNumber", nNewNumber);
+				command.Parameters.AddWithValue("@Number", nPhoneNumber);
 				command.ExecuteNonQuery();
 				dataAdapter.Dispose();
 				command.Dispose();
@@ -243,10 +243,10 @@ namespace ContactBookDB
 
 		public void EditLocation()
 		{
-			int PhoneNumber;
+			int nPhoneNumber;
 			Console.WriteLine("Enter the number to Edit ");
-			PhoneNumber = int.Parse(Console.ReadLine());
-			check(PhoneNumber);
+			nPhoneNumber = int.Parse(Console.ReadLine());
+			checkRecord(nPhoneNumber);
 			string strLocation;
 			Console.WriteLine("Enter the New Location ");
 			strLocation = Console.ReadLine();
@@ -256,10 +256,10 @@ namespace ContactBookDB
 				connection.Open();
 				SqlCommand command;
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
-				string sql = "Update Contacts Set Location = @Location where PhoneNumber = @Number" ;
-				command = new SqlCommand(sql, connection);					
+				string sqlQuery = "Update Contacts Set Location = @Location where PhoneNumber = @Number" ;
+				command = new SqlCommand(sqlQuery, connection);					
 				command.Parameters.AddWithValue("@Location", strLocation);
-				command.Parameters.AddWithValue("@Number" , PhoneNumber);
+				command.Parameters.AddWithValue("@Number" , nPhoneNumber);
 				command.ExecuteNonQuery();
 				dataAdapter.Dispose();
 				command.Dispose();
@@ -267,16 +267,16 @@ namespace ContactBookDB
 			}
 		}		
 
-		public void check(int PhoneNumber)
+		public void checkRecord(int PhoneNumber)
 		{
-			int Number = PhoneNumber;
+			int nNumber = PhoneNumber;
 			using(SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=ContactBook;Integrated Security=SSPI"))
 			{
 				connection.Open();
 				SqlCommand CheckNumber;
-				string sql = "Select * from Contacts Where PhoneNumber = @Number";
-				CheckNumber = new SqlCommand(sql, connection);					
-				CheckNumber.Parameters.AddWithValue("@Number", Number);
+				string sqlQuery = "Select * from Contacts Where PhoneNumber = @Number";
+				CheckNumber = new SqlCommand(sqlQuery, connection);					
+				CheckNumber.Parameters.AddWithValue("@Number", nNumber);
 				SqlDataReader reader = CheckNumber.ExecuteReader(CommandBehavior.CloseConnection);
 
 				if(reader.HasRows)
@@ -288,6 +288,7 @@ namespace ContactBookDB
 					Console.WriteLine("No Records found \n");
 					DisplayMenu();
 				}
+
 				CheckNumber.Dispose();
 				connection.Close();
 			}
@@ -299,12 +300,14 @@ namespace ContactBookDB
 			{
 				connection.Open();
 				SqlCommand command = new SqlCommand("Select Count(*) from Contacts", connection);
-				int count = (int) command.ExecuteScalar();
-				if(count == 0)
+				int Recordcount = (int) command.ExecuteScalar();
+
+				if(Recordcount == 0)
 				{
 					Console.WriteLine("No Records found \n");
 					DisplayMenu();
 				}
+
 				command.Dispose();
 				connection.Close();
 			}

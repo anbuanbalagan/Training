@@ -33,13 +33,13 @@ namespace ContactBook
 		protected global::System.Web.UI.WebControls.Label lblName;
 
 		/// <summary>
-		/// TextBox1 control.
+		/// txtName control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox1;
+		protected global::System.Web.UI.WebControls.TextBox txtName;
 
 		/// <summary>
 		/// lblNumber control.
@@ -69,39 +69,48 @@ namespace ContactBook
 		protected global::System.Web.UI.WebControls.Label lblLocation;
 
 		/// <summary>
-		/// TextBox3 control.
+		/// txtLocation control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox3;
+		protected global::System.Web.UI.WebControls.TextBox txtLocation;
 
 		/// <summary>
-		/// Button1 control.
+		/// btnSave control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Button1;
+		protected global::System.Web.UI.WebControls.Button btnSave;
 
 		/// <summary>
-		/// Button2 control.
+		/// btnClear control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Button2;
+		protected global::System.Web.UI.WebControls.Button btnClear;
 
 		/// <summary>
-		/// Button3 control.
+		/// btnDisplay control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Button3;
+		protected global::System.Web.UI.WebControls.Button btnDisplay;
+
+		/// <summary>
+		/// btnEdit control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnEdit;
 	}
 }
