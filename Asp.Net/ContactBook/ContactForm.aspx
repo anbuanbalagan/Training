@@ -13,64 +13,94 @@
             width: 150px;
         }
         .auto-style3 {
-            position: center;
+            border:solid;
+            line-height:35px;
+            position: center;   
             margin: auto;
-            width: 475px;
-            height: 170px;
+            width: 571px;
+            height: 229px;
         }
 
         .auto-style4 {
             width: 150px;
-            height: 85px;
+            height: 84px;
         }
         .auto-style5 {
             position: center;
-            width: 475px;
-            height: 87px;
+            width: 550px;
+            height: 48px;
             margin-left: auto;
-            margin-right: auto;
-            margin-top: auto;
+            margin-right: auto;          
         }
 
-    </style>
+        .auto-style6 {
+            margin-left: 0px;
+        }
+
+        .mydataGrid{
+            width: 60%;
+            text-align: center;
+            border: solid 2px black;
+            position: center;
+            margin: auto;
+        }
+
+        </style>
 </head>
 <body>
     <h1>ContactBook</h1>
     <form id="form1" runat="server">
         <div class="one">
-           <table class="auto-style3">
+           <table class="auto-style3" border="0">
                <tr>
                    <td>
-                       <asp:Label ID="lblName" runat="server" Text="Name" Width="130px" Height="35px"></asp:Label></td>
+                       <asp:Label ID="lblName" runat="server" Text="Name" Width="130px" Height="35px" BorderStyle="Solid" BorderWidth="2px"></asp:Label></td>
                    <td class="auto-style1">
-                       <asp:TextBox ID="txtName" runat="server" Width="300px"></asp:TextBox></td>
+                       <asp:TextBox ID="txtName" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
                </tr>
                <tr>
                    <td>
-                       <asp:Label ID="lblNumber" runat="server" Text="PhoneNumber" Width="130px" Height="35px"></asp:Label></td>
+                       <asp:Label ID="lblNumber" runat="server" Text="PhoneNumber" Width="130px" Height="35px" BorderStyle="Solid" BorderWidth="2px"></asp:Label></td>
                    <td class="auto-style1">
-                       <asp:TextBox ID="txtNumber" runat="server" Width="300px"></asp:TextBox></td>
+                       <asp:TextBox ID="txtNumber" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
                </tr>
                <tr>
                    <td>
-                       <asp:Label ID="lblLocation" runat="server" Text="Location" Width="130px" Height="35px"></asp:Label></td>
+                       <asp:Label ID="lblLocation" runat="server" Text="Location" Width="130px" Height="35px" BorderStyle="Solid" BorderWidth="2px"></asp:Label></td>
                    <td class="auto-style1">
-                       <asp:TextBox ID="txtLocation" runat="server" Width="300px"></asp:TextBox></td>
-               </tr>               
+                       <asp:TextBox ID="txtLocation" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
+               </tr>   
+               <tr>
+                   <td>
+                       <asp:Label ID="lblSearch" runat="server" Text="Search" Height="30px" Width="130px"></asp:Label></td>
+                   <td>
+                       <asp:TextBox ID="txtSearch" runat="server" Height="30px" Width="298px" BorderStyle="Dashed" CssClass="auto-style6"></asp:TextBox></td>
+                    <td>
+                       <asp:Button ID="btnShow" runat="server" Text="Show" OnClick="btnShow_Click" />
+                   </td>
+               </tr>
            </table>
+            <br />
+                &nbsp;&nbsp;
             <table class ="auto-style5">
                 <tr>
                    <td class="auto-style4">
-                       <asp:Button ID="btnSave" runat="server" Text="Save" Width="80px" OnClick="btnSave_Click" /></td>
+                       <asp:Button ID="btnSave" runat="server" Text="Save" Width="80px" OnClick="btnSave_Click" BorderStyle="Solid" /></td>
                     <td class="auto-style4">
-                       <asp:Button ID="btnClear" runat="server" Text="Clear" Width="80px" OnClick="btnClear_Click" /></td>
+                       <asp:Button ID="btnClear" runat="server" Text="Clear" Width="80px" OnClick="btnClear_Click" BorderStyle="Solid" /></td>
                     <td class="auto-style4">
-                       <asp:Button ID="btnDisplay" runat="server" Text="Display" Width="80px" OnClick="btnDisplay_Click" /></td>
+                       <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="80px" OnClick="btnDelete_Click" BorderStyle="Solid" /></td>
                     <td class="auto-style4">
-                       <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="80px" /></td>
+                       <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="80px" BorderStyle="Solid" OnClick="btnEdit_Click" /></td>
+                    <td class="auto-style4">
+                       <asp:Button ID="btnDisplay" runat="server" Text="Display" Width="80px" BorderStyle="Solid" OnClick="btnDisplay_Click" /></td>
+                  
                </tr>
             </table>
+            <br />         
+        <asp:GridView ID="GridView1" runat="server" CssClass="mydataGrid"></asp:GridView>
         </div>
     </form>
+
 </body>
 </html>

@@ -78,6 +78,33 @@ namespace ContactBook
 		protected global::System.Web.UI.WebControls.TextBox txtLocation;
 
 		/// <summary>
+		/// lblSearch control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblSearch;
+
+		/// <summary>
+		/// txtSearch control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtSearch;
+
+		/// <summary>
+		/// btnShow control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnShow;
+
+		/// <summary>
 		/// btnSave control.
 		/// </summary>
 		/// <remarks>
@@ -96,13 +123,13 @@ namespace ContactBook
 		protected global::System.Web.UI.WebControls.Button btnClear;
 
 		/// <summary>
-		/// btnDisplay control.
+		/// btnDelete control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnDisplay;
+		protected global::System.Web.UI.WebControls.Button btnDelete;
 
 		/// <summary>
 		/// btnEdit control.
@@ -112,5 +139,23 @@ namespace ContactBook
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button btnEdit;
+
+		/// <summary>
+		/// btnDisplay control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnDisplay;
+
+		/// <summary>
+		/// GridView1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.GridView GridView1;
 	}
 }
