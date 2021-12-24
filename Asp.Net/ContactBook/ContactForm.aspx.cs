@@ -15,7 +15,6 @@ namespace ContactBook
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
 		}
 
 		protected void btnSave_Click(object sender, EventArgs e)
@@ -30,7 +29,7 @@ namespace ContactBook
 			    command.ExecuteNonQuery();
 				btnDisplay_Click(sender, e);
 				connection.Close();
-			}
+			}			
 		}
 
 		protected void btnClear_Click(object sender, EventArgs e)
@@ -43,7 +42,7 @@ namespace ContactBook
 
 		protected void btnDelete_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI"))
+			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
 			{
 				connection.Open();
 				SqlCommand command;			
@@ -57,7 +56,7 @@ namespace ContactBook
 
 		protected void btnEdit_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI"))
+			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
 			{
 				connection.Open();
 				SqlCommand command;				
@@ -74,14 +73,14 @@ namespace ContactBook
 
 		protected void btnShow_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI"))
+			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
 			{
 				connection.Open();
 				SqlCommand command;				
 				string sqlQuery = "Select * from Contacts where PhoneNumber = " + txtSearch.Text;
 				command = new SqlCommand(sqlQuery, connection);
 
-				if(Regex.IsMatch(txtSearch.Text, "[^0-9]*$"))
+				if(Regex.IsMatch(txtSearch.Text, "[^0-9]"))
 				{
 					Response.Write("<script>alert('Invalid Input. Type a Number...')</script>");					
 				}
@@ -109,7 +108,7 @@ namespace ContactBook
 
 		protected void btnDisplay_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI"))
+			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
 			{
 				connection.Open();
 				SqlCommand command;

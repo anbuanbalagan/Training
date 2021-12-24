@@ -8,10 +8,12 @@
     <style>
         h1{
             text-align: center;
-        }        
+        }  
+        
         .auto-style1 {
             width: 180px;
         }
+
         .auto-style3 {
             border-style: solid;
             border-color: inherit;
@@ -27,6 +29,7 @@
             width: 150px;
             height: 84px;
         }
+
         .auto-style5 {
             position: center;
             width: 550px;
@@ -34,11 +37,7 @@
             margin-left: auto;
             margin-right: auto;          
         }
-
-        .auto-style6 {
-            margin-left: 0px;
-        }
-
+        
         .mydataGrid{
             width: 60%;
             text-align: center;
@@ -52,6 +51,12 @@
             height: 70px;
         }
 
+        .auto-style9 {
+            width: 150px;
+            height: 70px;
+            margin-left: 29px;
+        }
+
         </style>
 </head>
 <body>
@@ -63,7 +68,7 @@
                    <td>
                        <asp:Label ID="lblSearch" runat="server" Text="Search Number" Height="30px" Width="143px"></asp:Label></td>
                    <td>
-                       <asp:TextBox ID="txtSearch" runat="server" Height="30px" Width="304px" BorderStyle="Dashed" CssClass="auto-style6"></asp:TextBox></td>
+                       <asp:TextBox ID="txtSearch" runat="server" Height="30px" Width="304px" BorderStyle="Dashed" CssClass="auto-style9"></asp:TextBox></td>
                     <td>
                        <asp:Button ID="btnShow" runat="server" Text="Show" OnClick="btnShow_Click" />
                    </td>
