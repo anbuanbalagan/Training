@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
-using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,7 +27,9 @@ namespace ContactBook
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
 				string sqlQuery = "Insert into Contacts(Name, PhoneNumber, Location) Values('" + txtName.Text + "', '" + txtNumber.Text + "', '" + txtLocation.Text + "')";
 				command = new SqlCommand(sqlQuery, connection);
-				int status = command.ExecuteNonQuery();
+			    command.ExecuteNonQuery();
+				btnDisplay_Click(sender, e);
+				connection.Close();
 			}
 		}
 
@@ -45,9 +47,11 @@ namespace ContactBook
 			{
 				connection.Open();
 				SqlCommand command;			
-				string sqlQuery = "Delete from Contacts where PhoneNumber = " + txtNumber.Text;				
+				string sqlQuery = "Delete from Contacts where PhoneNumber = " + txtSearch.Text;				
 				command = new SqlCommand(sqlQuery, connection);
 				command.ExecuteNonQuery();
+				btnDisplay_Click(sender, e);
+				connection.Close();
 			}
 		}		
 
@@ -56,13 +60,14 @@ namespace ContactBook
 			using(SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI"))
 			{
 				connection.Open();
-				SqlCommand command;
+				SqlCommand command;				
 				string sqlQuery = "Update Contacts Set Name = @Name , PhoneNumber = @Number, Location = @Location where PhoneNumber = " + txtSearch.Text;
 				command = new SqlCommand(sqlQuery, connection);
 				command.Parameters.AddWithValue("@Name", txtName.Text);
 				command.Parameters.AddWithValue("@Number", txtNumber.Text);
 				command.Parameters.AddWithValue("@Location", txtLocation.Text);
 				command.ExecuteNonQuery();
+				btnDisplay_Click(sender, e);
 				connection.Close();
 			}
 		}
@@ -72,25 +77,32 @@ namespace ContactBook
 			using(SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI"))
 			{
 				connection.Open();
-				SqlCommand command;
-				string sqlQuery = "Select Count(*) from Contacts where PhoneNumber = " + txtSearch.Text;
+				SqlCommand command;				
+				string sqlQuery = "Select * from Contacts where PhoneNumber = " + txtSearch.Text;
 				command = new SqlCommand(sqlQuery, connection);
-				DataSet dataSet = new DataSet("Contacts");
-				SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-				dataAdapter.Fill(dataSet);
-				int count = dataSet.Tables[0].Rows.Count;
 
-				if(count >= 1)
+				if(Regex.IsMatch(txtSearch.Text, "[^0-9]*$"))
 				{
-					Response.Write("<script>alert(' Record found')</script>");					
+					Response.Write("<script>alert('Invalid Input. Type a Number...')</script>");					
 				}
 				else
 				{
-					Response.Write("<script>alert('No Record found')</script>");
-				}
+					SqlDataReader dataReader = command.ExecuteReader();
+					bool contactExists = false;
 
-				GridView1.DataSource = dataSet;
-				GridView1.DataBind();
+					while(dataReader.Read())
+					{
+						txtName.Text = dataReader[0].ToString();
+						txtNumber.Text = dataReader[1].ToString();
+						txtLocation.Text = dataReader[2].ToString();
+						contactExists = true;
+					}
+
+					if(contactExists == false)
+					{
+						Response.Write("<script>alert('No Record found')</script>");
+					}
+				}				
 				connection.Close();
 			}
 		}
@@ -109,6 +121,6 @@ namespace ContactBook
 				GridView1.DataBind();
 				connection.Close();
 			}
-		}
+		}		
 	}
 }

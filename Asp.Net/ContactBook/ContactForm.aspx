@@ -10,15 +10,17 @@
             text-align: center;
         }        
         .auto-style1 {
-            width: 150px;
+            width: 180px;
         }
         .auto-style3 {
-            border:solid;
+            border-style: solid;
+            border-color: inherit;
+            border-width: medium;
             line-height:35px;
             position: center;   
             margin: auto;
-            width: 571px;
-            height: 229px;
+            width: 550px;
+            height: 219px;
         }
 
         .auto-style4 {
@@ -45,40 +47,49 @@
             margin: auto;
         }
 
+        .auto-style8 {
+            width: 150px;
+            height: 70px;
+        }
+
         </style>
 </head>
 <body>
     <h1>ContactBook</h1>
     <form id="form1" runat="server">
         <div class="one">
-           <table class="auto-style3" border="0">
-               <tr>
+            <table class="auto-style5" border="0">
+                <tr>
                    <td>
-                       <asp:Label ID="lblName" runat="server" Text="Name" Width="130px" Height="35px" BorderStyle="Solid" BorderWidth="2px"></asp:Label></td>
-                   <td class="auto-style1">
-                       <asp:TextBox ID="txtName" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
-               </tr>
-               <tr>
+                       <asp:Label ID="lblSearch" runat="server" Text="Search Number" Height="30px" Width="143px"></asp:Label></td>
                    <td>
-                       <asp:Label ID="lblNumber" runat="server" Text="PhoneNumber" Width="130px" Height="35px" BorderStyle="Solid" BorderWidth="2px"></asp:Label></td>
-                   <td class="auto-style1">
-                       <asp:TextBox ID="txtNumber" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
-               </tr>
-               <tr>
-                   <td>
-                       <asp:Label ID="lblLocation" runat="server" Text="Location" Width="130px" Height="35px" BorderStyle="Solid" BorderWidth="2px"></asp:Label></td>
-                   <td class="auto-style1">
-                       <asp:TextBox ID="txtLocation" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
-               </tr>   
-               <tr>
-                   <td>
-                       <asp:Label ID="lblSearch" runat="server" Text="Search" Height="30px" Width="130px"></asp:Label></td>
-                   <td>
-                       <asp:TextBox ID="txtSearch" runat="server" Height="30px" Width="298px" BorderStyle="Dashed" CssClass="auto-style6"></asp:TextBox></td>
+                       <asp:TextBox ID="txtSearch" runat="server" Height="30px" Width="304px" BorderStyle="Dashed" CssClass="auto-style6"></asp:TextBox></td>
                     <td>
                        <asp:Button ID="btnShow" runat="server" Text="Show" OnClick="btnShow_Click" />
                    </td>
                </tr>
+            </table>
+            <br />
+           <table class="auto-style3" border="0">
+               <tr>
+                   <td class="auto-style8">
+                       <asp:Label ID="lblName" runat="server" Text="Name" Width="130px" Height="35px"></asp:Label></td>
+                   <td class="auto-style8">
+                       <asp:TextBox ID="txtName" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
+               </tr>
+               <tr>
+                   <td class="auto-style8">
+                       <asp:Label ID="lblNumber" runat="server" Text="PhoneNumber" Width="130px" Height="35px"></asp:Label></td>
+                   <td class="auto-style1">
+                       <asp:TextBox ID="txtNumber" runat="server" Width="300px" BorderStyle="Solid" Height="35px" TextMode="Number"></asp:TextBox></td>
+               </tr>
+               <tr>
+                   <td class="auto-style8">
+                       <asp:Label ID="lblLocation" runat="server" Text="Location" Width="130px" Height="35px"></asp:Label></td>
+                   <td class="auto-style1">
+                       <asp:TextBox ID="txtLocation" runat="server" Width="300px" BorderStyle="Solid" Height="35px"></asp:TextBox></td>
+               </tr>   
+               
            </table>
             <br />
                 &nbsp;&nbsp;
@@ -94,7 +105,7 @@
                        <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="80px" BorderStyle="Solid" OnClick="btnEdit_Click" /></td>
                     <td class="auto-style4">
                        <asp:Button ID="btnDisplay" runat="server" Text="Display" Width="80px" BorderStyle="Solid" OnClick="btnDisplay_Click" /></td>
-                  
+                                  
                </tr>
             </table>
             <br />         
