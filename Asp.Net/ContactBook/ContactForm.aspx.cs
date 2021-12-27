@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace ContactBook
 {
-	public partial class ContactForm : System.Web.UI.Page
+	public partial class ContactForm : System.Web.UI.Page 
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -80,11 +80,7 @@ namespace ContactBook
 				string sqlQuery = "Select * from Contacts where PhoneNumber = " + txtSearch.Text;
 				command = new SqlCommand(sqlQuery, connection);
 
-				if(Regex.IsMatch(txtSearch.Text, "[^0-9]"))
-				{
-					Response.Write("<script>alert('Invalid Input. Type a Number...')</script>");					
-				}
-				else
+				if(Regex.IsMatch(txtSearch.Text, @"^\d+$"))
 				{
 					SqlDataReader dataReader = command.ExecuteReader();
 					bool contactExists = false;
@@ -101,6 +97,10 @@ namespace ContactBook
 					{
 						Response.Write("<script>alert('No Record found')</script>");
 					}
+				}
+				else
+				{					
+					Response.Write("<script>alert('Invalid Input. Type a Number...')</script>");
 				}				
 				connection.Close();
 			}

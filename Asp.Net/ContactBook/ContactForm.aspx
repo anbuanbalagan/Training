@@ -22,18 +22,18 @@
             position: center;   
             margin: auto;
             width: 550px;
-            height: 219px;
+            height: 220px;
         }
 
         .auto-style4 {
             width: 150px;
-            height: 84px;
+            height: 85px;
         }
 
         .auto-style5 {
             position: center;
             width: 550px;
-            height: 48px;
+            height: 50px;
             margin-left: auto;
             margin-right: auto;          
         }
@@ -61,7 +61,7 @@
 </head>
 <body>
     <h1>ContactBook</h1>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" autocomplete="off">
         <div class="one">
             <table class="auto-style5" border="0">
                 <tr>
