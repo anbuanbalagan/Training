@@ -13,23 +13,38 @@ namespace ContactBook
 {
 	public partial class ContactForm : System.Web.UI.Page 
 	{
+		SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI");
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			
 		}
 
 		protected void btnSave_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database =ContactBook; Integrated security = SSPI"))
+			try
 			{
 				connection.Open();
 				SqlCommand command;
 				SqlDataAdapter dataAdapter = new SqlDataAdapter();
-				string sqlQuery = "Insert into Contacts(Name, PhoneNumber, Location) Values('" + txtName.Text + "', '" + txtNumber.Text + "', '" + txtLocation.Text + "')";
-				command = new SqlCommand(sqlQuery, connection);
-			    command.ExecuteNonQuery();
-				btnDisplay_Click(sender, e);
+				string insertQuery = "Insert into Contacts(Name, PhoneNumber, Location) Values('" + txtName.Text + "', '" + txtNumber.Text + "', '" + txtLocation.Text + "')";
+				command = new SqlCommand(insertQuery, connection);
+				command.ExecuteNonQuery();
+				command.Dispose();
+				ShowMessage("Contact Saved Successfully");
+			}
+			catch(SqlException ex)
+			{
+				ShowMessage(ex.Message);
+			}
+			finally
+			{
 				connection.Close();
-			}			
+			}
+		}
+
+		private void ShowMessage(string message)
+		{
+			Response.Write("<script>alert('" + message +"')</script>");			
 		}
 
 		protected void btnClear_Click(object sender, EventArgs e)
@@ -42,82 +57,104 @@ namespace ContactBook
 
 		protected void btnDelete_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
+			try
 			{
 				connection.Open();
-				SqlCommand command;			
-				string sqlQuery = "Delete from Contacts where PhoneNumber = " + txtSearch.Text;				
-				command = new SqlCommand(sqlQuery, connection);
+				SqlCommand command;
+				string deleteQuery = "Delete from Contacts where PhoneNumber = " + txtSearch.Text;
+				command = new SqlCommand(deleteQuery, connection);
 				command.ExecuteNonQuery();
-				btnDisplay_Click(sender, e);
+				command.Dispose();
+				ShowMessage("Contact Deleted Successfully");
+			}
+			catch(SqlException ex)
+			{
+				ShowMessage(ex.Message);
+			}
+			finally
+			{
 				connection.Close();
 			}
 		}		
 
-		protected void btnEdit_Click(object sender, EventArgs e)
+		protected void btnUpdate_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
+			try
 			{
 				connection.Open();
-				SqlCommand command;				
-				string sqlQuery = "Update Contacts Set Name = @Name , PhoneNumber = @Number, Location = @Location where PhoneNumber = " + txtSearch.Text;
-				command = new SqlCommand(sqlQuery, connection);
+				SqlCommand command;
+				string updateQuery = "Update Contacts Set Name = @Name , PhoneNumber = @Number, Location = @Location where PhoneNumber = " + txtSearch.Text;
+				command = new SqlCommand(updateQuery, connection);
 				command.Parameters.AddWithValue("@Name", txtName.Text);
 				command.Parameters.AddWithValue("@Number", txtNumber.Text);
 				command.Parameters.AddWithValue("@Location", txtLocation.Text);
 				command.ExecuteNonQuery();
-				btnDisplay_Click(sender, e);
+				command.Dispose();
+				ShowMessage("Contact Updated Successfully");
+			}
+			catch(SqlException ex)
+			{
+				ShowMessage(ex.Message);
+			}
+			finally
+			{
 				connection.Close();
 			}
 		}
 
 		protected void btnShow_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
+			
+			connection.Open();
+			SqlCommand command;
+			string searchQuery = "Select * from Contacts where PhoneNumber = " + txtSearch.Text;
+			command = new SqlCommand(searchQuery, connection);
+
+			if(Regex.IsMatch(txtSearch.Text, @"^\d+$"))
 			{
-				connection.Open();
-				SqlCommand command;				
-				string sqlQuery = "Select * from Contacts where PhoneNumber = " + txtSearch.Text;
-				command = new SqlCommand(sqlQuery, connection);
+				SqlDataReader dataReader = command.ExecuteReader();
+				bool contactExists = false;
 
-				if(Regex.IsMatch(txtSearch.Text, @"^\d+$"))
+				while(dataReader.Read())
 				{
-					SqlDataReader dataReader = command.ExecuteReader();
-					bool contactExists = false;
-
-					while(dataReader.Read())
-					{
-						txtName.Text = dataReader[0].ToString();
-						txtNumber.Text = dataReader[1].ToString();
-						txtLocation.Text = dataReader[2].ToString();
-						contactExists = true;
-					}
-
-					if(contactExists == false)
-					{
-						Response.Write("<script>alert('No Record found')</script>");
-					}
+					txtName.Text = dataReader[0].ToString();
+					txtNumber.Text = dataReader[1].ToString();
+					txtLocation.Text = dataReader[2].ToString();
+					contactExists = true;
 				}
-				else
-				{					
-					Response.Write("<script>alert('Invalid Input. Type a Number...')</script>");
-				}				
-				connection.Close();
+
+				if(contactExists == false)
+				{
+					Response.Write("<script>alert('No Record found')</script>");
+				}
 			}
+			else
+			{
+				Response.Write("<script>alert('Invalid Input. Type a Number...')</script>");
+			}
+			connection.Close();			
 		}
 
 		protected void btnDisplay_Click(object sender, EventArgs e)
 		{
-			using(SqlConnection connection = new SqlConnection("data source =.; Database = ContactBook; Integrated security = SSPI"))
+			try  
 			{
 				connection.Open();
 				SqlCommand command;
-				string sqlQuery = "Select * from Contacts";
-				command = new SqlCommand(sqlQuery, connection);
+				string displayQuery = "Select * from Contacts";
+				command = new SqlCommand(displayQuery, connection);
 				SqlDataReader dataReader = command.ExecuteReader();
 
 				GridView1.DataSource = dataReader;
 				GridView1.DataBind();
+				command.Dispose();
+			}
+			catch(SqlException ex)
+			{
+				ShowMessage(ex.Message);
+			}
+			finally
+			{
 				connection.Close();
 			}
 		}		

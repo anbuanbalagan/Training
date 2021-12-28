@@ -107,7 +107,7 @@
                     <td class="auto-style4">
                        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="80px" OnClick="btnDelete_Click" BorderStyle="Solid" /></td>
                     <td class="auto-style4">
-                       <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="80px" BorderStyle="Solid" OnClick="btnEdit_Click" /></td>
+                       <asp:Button ID="btnEdit" runat="server" Text="Update" Width="80px" BorderStyle="Solid" OnClick="btnUpdate_Click" /></td>
                     <td class="auto-style4">
                        <asp:Button ID="btnDisplay" runat="server" Text="Display" Width="80px" BorderStyle="Solid" OnClick="btnDisplay_Click" /></td>
                                   
