@@ -8,11 +8,9 @@ namespace HeapSort
 		{
 			int[] array = { 72, 56, 10, 25, 6, 77, 8, 42, 84, 20, 50, 15 };
 			Console.WriteLine("Heap Sort");
-
 			Print(array);
 			Console.WriteLine("\nCalling the Sort function");
 			HeapSort(array);
-
 			Console.WriteLine("\nAfter Sorting the Array");
 			Print(array);
 		}
@@ -28,6 +26,7 @@ namespace HeapSort
 		static void HeapSort(int[] array)
 		{
 			int length = array.Length;
+
 			for(int i = length / 2 - 1; i >= 0; i--)
 			{
 				Heap(array, length, i);
