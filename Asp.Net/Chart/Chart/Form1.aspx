@@ -17,20 +17,35 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <table class="one">            
+        <table class="one">
             <tr>
                 <td colspan="2">
                     <asp:Chart ID="Chart1" runat="server" Width="700px">
                         <Titles>
-                            <asp:Title Text="Website Visitors"></asp:Title>
+                            <asp:Title Text="Website Visitors by Month"></asp:Title>
                         </Titles>
                         <Series>
-                            <asp:Series Name="Series1" ChartArea="ChartArea1" ChartType="pie">                                
-                            </asp:Series>
+                            <asp:Series Name="Series1" ChartType="Doughnut"></asp:Series>
                         </Series>
                         <ChartAreas>
-                            <asp:ChartArea Name="ChartArea1">                               
-                            </asp:ChartArea>
+                            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                        </ChartAreas>
+                    </asp:Chart>
+                </td>
+            </tr>           
+        </table><br />
+        <table class="one">
+            <tr>
+                <td colspan="2">
+                    <asp:Chart ID="Chart2" runat="server" Width="700px">
+                        <Titles>
+                            <asp:Title Text="Website Visitors by Week"></asp:Title>
+                        </Titles>
+                        <Series>
+                            <asp:Series Name="Series2" ChartType="Pie"></asp:Series>
+                        </Series>
+                        <ChartAreas>
+                            <asp:ChartArea Name="ChartArea2"></asp:ChartArea>
                         </ChartAreas>
                     </asp:Chart>
                 </td>
