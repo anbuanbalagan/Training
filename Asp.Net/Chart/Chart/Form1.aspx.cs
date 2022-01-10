@@ -24,8 +24,6 @@ namespace Chart
 			series.Points.AddXY("Thr", "300");
 			series.Points.AddXY("Fri", "750");
 			series.Points.AddXY("Sat", "950");
-
-			//Chart1.Titles.Add("New");
 		}
 	}
 }
