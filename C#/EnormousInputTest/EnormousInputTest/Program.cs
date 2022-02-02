@@ -16,6 +16,7 @@ namespace EnormousInputTest
 			for(int i = 0; i < n ; i++)
 			{				
 				int nInput = int.Parse(Console.ReadLine());
+
 				if(nInput % k == 0)
 				{
 					nCount++;
