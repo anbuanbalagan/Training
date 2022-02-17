@@ -10,25 +10,19 @@
         counter-reset: innersubsection;
     }
 
-    .Main h1::before {
+    .Parent h1::before {
         counter-increment: section;
         content: counter(section) ". ";
     }
 
-    .Inner1 h2::before, .Inner2 h2::before {
+    .Child h2::before {
         padding:30px;
         counter-increment: subsection;
         content: counter(section) "." counter(subsection) " ";
     }
 
-    .Inner1 .Inside1 h3::before, .Inner1 .Inside2 h3::before {
+    .Child .SubChild h3::before {
         padding:70px;
-        counter-increment: innersubsection;
-        content: counter(section) "." counter(subsection) "." counter(innersubsection)" ";
-    }
-
-    .Inner2 .Inside1 h3::before, .Inner2 .Inside2 h3::before {
-        padding: 70px;
         counter-increment: innersubsection;
         content: counter(section) "." counter(subsection) "." counter(innersubsection)" ";
     }
