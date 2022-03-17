@@ -1,28 +1,28 @@
 ﻿body {
-        counter-reset: section;
+    counter-reset: section;
     }
 
-    h1 {
-        counter-reset: subsection;
-    }
+.Parent {
+    counter-reset: subsection;
+}
 
-    h2 {
-        counter-reset: innersubsection;
-    }
+.Child {
+    counter-reset: innersubsection;
+}
 
-    .Parent h1::before {
-        counter-increment: section;
-        content: counter(section) ". ";
-    }
+.Parent::before {
+    counter-increment: section;
+    content: counter(section) ".";
+}
 
-    .Child h2::before {
-        padding:30px;
-        counter-increment: subsection;
-        content: counter(section) "." counter(subsection) " ";
-    }
+.Parent .Child::before {
+    padding: 30px;
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) " ";
+}
 
-    .Child .SubChild h3::before {
-        padding:70px;
-        counter-increment: innersubsection;
-        content: counter(section) "." counter(subsection) "." counter(innersubsection)" ";
-    }
+.Parent .Child .SubChild::before {
+    padding: 70px;
+    counter-increment: innersubsection;
+    content: counter(section) "." counter(subsection) "." counter(innersubsection)" ";
+}
